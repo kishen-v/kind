@@ -108,10 +108,10 @@ COPY --chmod=0755 scripts/third_party/gimme/gimme /usr/local/bin/
 COPY --chmod=0755 scripts/target-cc /usr/local/bin/
 # tools needed at build-time only
 # first ensure we can install packages for both architectures
-RUN dpkg --add-architecture arm64 && dpkg --add-architecture amd64 \
-    && clean-install bash ca-certificates curl git make pkg-config \
-    crossbuild-essential-amd64 crossbuild-essential-arm64 \
-    libseccomp-dev:amd64 libseccomp-dev:arm64
+RUN dpkg --add-architecture ppc64el \
+    && clean-install bash ca-certificates curl git make pkg-config gcc \
+    crossbuild-essential-ppc64el \
+    libseccomp-dev:ppc64el
 # set by makefile to .go-version
 ARG GO_VERSION
 RUN eval "$(gimme "${GO_VERSION}")" \

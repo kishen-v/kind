@@ -25,8 +25,8 @@ NOTE: we have customized it in the following ways:
 - install as the default storage class
 */
 
-const storageProvisionerImage = "docker.io/kindest/local-path-provisioner:v20240513-b9bba138"
-const storageHelperImage = "docker.io/kindest/local-path-helper:v20230510-486859a6"
+const storageProvisionerImage = "quay.io/kviswana/local-path-provisioner:v20240611-d897688d"
+const storageHelperImage = "quay.io/kviswana/local-path-helper:v20240611-d897688d"
 
 // image we need to preload
 var defaultStorageImages = []string{storageProvisionerImage, storageHelperImage}
